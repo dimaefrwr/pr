@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Rezerwacja biletów
+    link(rel='stylesheet', href='/styles.css')
+    link(rel='shortcut icon', type='image/png', href='/logo.png')
+  body
+    h1 Rezerwacja biletów na koncert
+    each event in events
+      .event
+        h2 Data koncertu: #{event.date}
+        p Dostępne miejsca: #{event.seats}
+        form(action=`/concert/reserve/${event.id}`, method='post')
+          input(type='number', name='seats', min='1', max=`${event.seats}`, required)
+          button(type='submit') Zarezerwuj miejsce

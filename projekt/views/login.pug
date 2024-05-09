@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Logowanie
+  body
+    h1 Logowanie
+    form(action='/auth/login', method='post')
+      div
+        label(for='username') Nazwa użytkownika:
+        input(type='text', name='username', required oninvalid="this.setCustomValidity('Proszę wypełnić to pole')" oninput="this.setCustomValidity('')")
+      div
+        label(for='password') Hasło:
+        input(type='password', name='password', required oninvalid="this.setCustomValidity('Proszę wypełnić to pole')" oninput="this.setCustomValidity('')")
+      div
+        button(type='submit') Zaloguj się
+    a(href='/auth/register') Zarejestruj się
